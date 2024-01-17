@@ -15,41 +15,55 @@ import { HttpCode } from '@nestjs/common';
 import { Request } from 'express';
 import { CreateCatDto } from './dto/crate-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
+import { Cat } from './interfaces/cat.interface';
+import { CatsService } from './cats.service';
 
 @Controller('cats')
 export class CatsController {
-  // Redirecionamento -> @Redirect('https://nestjs.com', 301)
-  @Get()
-  findAll(@Req() request: Request): string {
-    return 'This action returns all cats';
+  constructor(private catsService: CatsService) {}
+
+  @Post()
+  async create(@Body() createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
   }
+
+  @Get()
+  async findAll(): Promise<Cat[]> {
+    return this.catsService.findAll();
+  }
+
+  // Redirecionamento -> @Redirect('https://nestjs.com', 301)
+  // @Get()
+  // findAll(@Req() request: Request): string {
+  //   return 'This action returns all cats';
+  // }
 
   // post da documentação
   // para especificar um cabeçalho de resposta personalizado -> @Header('Cache-Control', 'none')
-  @Post()
-  @Header('Cache-Control', 'none')
-  async createDocumentation(): Promise<string> {
-    return 'This action adds a new cat';
-  }
+  // @Post()
+  // @Header('Cache-Control', 'none')
+  // async createDocumentation(): Promise<string> {
+  //   return 'This action adds a new cat';
+  // }
 
-  // exemplo de resposta injetando Express Response
-  @Post()
-  createExpress(@Res() response): void {
-    response.status(204).send('This action adds a new cat');
-  }
+  // // exemplo de resposta injetando Express Response
+  // @Post()
+  // createExpress(@Res() response): void {
+  //   response.status(204).send('This action adds a new cat');
+  // }
 
-  // exemplo para pegar parametros de rota
-  @Get(':id')
-  findOne(@Param() params: any): string {
-    console.log(params.id);
-    return `This action returns a #${params.id} cat`;
-  }
+  // // exemplo para pegar parametros de rota
+  // @Get(':id')
+  // findOne(@Param() params: any): string {
+  //   console.log(params.id);
+  //   return `This action returns a #${params.id} cat`;
+  // }
 
-  // exemplo acessando o body da requisição
-  @Post()
-  async create(@Body() crateCatDto: CreateCatDto) {
-    return 'this action adds a new cat';
-  }
+  // // exemplo acessando o body da requisição
+  // @Post()
+  // async create(@Body() crateCatDto: CreateCatDto) {
+  //   return 'this action adds a new cat';
+  // }
 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
