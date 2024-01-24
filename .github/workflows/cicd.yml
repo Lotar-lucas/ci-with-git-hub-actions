@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x 21.x]
+        node-version: [18.x]
     
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +20,5 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: ${{ matrix.node-version }}
-    
-      - run: npm install
-      - run: ls -la
+    #Setup do Job
+      - run: npm install && ls -la
