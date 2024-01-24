@@ -10,6 +10,7 @@ export class CatsService {
   }
 
   findAll(): Cat[] {
+    this.cats.push({ name: 'test', age: 1, breed: 'test' });
     return this.cats;
   }
 }
