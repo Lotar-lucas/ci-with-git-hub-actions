@@ -24,7 +24,3 @@ $ npm run test
 # test coverage
 $ npm run test:cov
 ```
-
-## License
-
-Nest is [MIT licensed](LICENSE).
