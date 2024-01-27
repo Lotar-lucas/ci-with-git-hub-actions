@@ -55,42 +55,27 @@ export class CatsController {
 }
 
 /*
+Exemplos
   Redirecionamento -> @Redirect('https://nestjs.com', 301)
-    @Get()
-    findAll(@Req() request: Request): string {
-      return 'This action returns all cats';
-    }
 
-  post da documentação
-  para especificar um cabeçalho de resposta personalizado -> @Header('Cache-Control', 'none')
-    @Post()
-    @Header('Cache-Control', 'none')
-    async createDocumentation(): Promise<string> {
-      return 'This action adds a new cat';
-    }
+  Para especificar um cabeçalho de resposta personalizado -> @Header('Cache-Control', 'none')
 
-  exemplo de resposta injetando Express Response
+  Para resposta injetando Express Response
     @Post()
     createExpress(@Res() response): void {
       response.status(204).send('This action adds a new cat');
     }
 
-  exemplo para pegar parametros de rota
+  Para pegar parametros de rota
     @Get(':id')
     findOne(@Param() params: any): string {
       console.log(params.id);
       return `This action returns a #${params.id} cat`;
     }
 
-  exemplo acessando o body da requisição
+  Para acessar o body da requisição
     @Post()
     async create(@Body() crateCatDto: CreateCatDto) {
       return 'this action adds a new cat';
     }
-
-  @Get()
-    async findAll2() {
-      throw new ForbiddenException();
-    }
-
 */
