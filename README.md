@@ -1,34 +1,6 @@
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# test coverage
-$ npm run test:cov
-```
-
-
 # Nome do Projeto
 
-API_exemplo_nest_gitHub_actions
+API de exemplo GitHub Actions com NestJS
 
 ## Índice
 
@@ -41,13 +13,13 @@ API_exemplo_nest_gitHub_actions
 
 ## Sobre o Projeto
 
-Descreva aqui o propósito do seu projeto, suas funcionalidades principais e quais problemas ele resolve. Seja claro e objetivo.
+Projeto realizado como prática de estudo de gitHub Actions, basicamente quando aberto um pull request para a branch master é executado os testes automatizados quem estão na API.
 
 ### Tecnologias Utilizadas
 
 - Linguagem: TypeScript
 - Framework: NestJS
-- Jest
+- Testes: Jest
 
 
 ### Pré-requisitos
@@ -62,4 +34,4 @@ Descreva aqui o propósito do seu projeto, suas funcionalidades principais e qua
 2. Instale as dependências: `npm install`
 3. Rode os testes: `npm run test`
 
-Feito por Lucas Lotar
+Feito por Lucas Lotar.
