@@ -21,4 +21,6 @@ jobs:
         with: 
           node-version: ${{ matrix.node-version }}
     #Setup do Job
-      - run: npm install && ls -la
+      - run: npm install
+      - run: npm run test
+      - run: ls -la
